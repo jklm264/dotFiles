@@ -57,6 +57,7 @@ linky .gitconfig_local shared
 linky .bashrc linux
 linky .bash_logout linux
 
+clear
 echo -e "\e[32mWe are finally finished!\e[m"
 echo "Do not forget to:"
 echo "  - Download vscode - https://code.visualstudio.com/download"
@@ -64,6 +65,6 @@ echo "  - IDA/Ghidra"
 echo "  - Docker"
 echo "  - Now merge pyradio files with my personal one"
 echo ""
-echo "\$cat mystations.csv ~/snap/pyradio/308/.config/pyradio/stations.csv > ~/snap/pyradio/308/.config/pyradio/stations.csv"
+echo "\$cat shared/mystations.csv ~/snap/pyradio/308/.config/pyradio/stations.csv > ~/snap/pyradio/308/.config/pyradio/stations.csv"
 echo ""
 echo -e "\e[31m**You should probably reboot now** \e[m"
