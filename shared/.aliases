@@ -30,6 +30,14 @@ alias gmsg='git commit -m $1'
 alias gp='git push'
 alias gcforensics='git clone https://github.com/jklm264/My-Forensics-Notes.git'
 
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	alias uu='sudo apt update && sudo apt upgrade -y && sudo apt autoclean -y && exit'
+	alias open='xdg-open $1'
+	alias cb='xclip -selection clipboard'
+else # Mac
+	alias uu=~/.updater.sh # Still have to make updater.sh
+fi
+
 ##### Functions #####
 mcd () {
 	mkdir -p $1
@@ -40,11 +48,4 @@ cwd="."
 marco () { cwd=$(pwd); }
 polo () { cd $cwd; }
 
-
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-	alias uu='sudo apt update && sudo apt upgrade -y && sudo apt autoclean -y && exit'
-	alias open='xdg-open $1'
-	alias cb='xclip -selection clipboard'
-else # Mac
-	alias uu=~/.updater.sh # Still have to make updater.sh
-fi
+down4me() { curl -s "http://downforeveryoneorjustme.com/$1" | sed '/just you/!d;s/<[^>]*>//g' ;}   # check if a website is down
