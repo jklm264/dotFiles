@@ -9,6 +9,7 @@ alias mkdir='mkdir -p'
 alias pingg='ping 8.8.8.8'
 alias ll='ls -alhtF'
 alias tmuxnew='tmux new -s $1'
+alias cls='clear; ls'
 # Gets local ip depending on which program is installed
 if [ -f /sbin/ip ]; then
 	alias iff='ip a | grep ens33 | awk '\''$1 == "inet" {print $2}'\'''
