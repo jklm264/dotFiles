@@ -23,12 +23,8 @@ White='\e[0;37m'
 # ~~Alias' Section~~
 ##### Common #####
 alias pingg='ping 8.8.8.8'
-alias ghidra='/Users/unlikelyhacker/CTFs\ and\ More/Learning/Learning_Ghidra/ghidra_9.0.1/ghidraRun'
 alias iff='ifconfig en0 | awk '\''$1 == "inet" {print $2}'\'''
-alias nn='nn-naruto_next.sh'
-alias winlookup='windowsplus'
 alias ll='ls -alhf@'
-alias uu='time ./updater.sh'
 alias cli_histogram='sort | uniq -c | sort -n'
 alias wms='wormhole send $1'
 alias wmr='wormhole recieve'
@@ -46,8 +42,14 @@ alias gcquar='git clone https://github.com/jklm264/quarantine_learning.git'
 alias gcforensics='git clone https://github.com/jklm264/My-Forensics-Notes.git'
 # ~~End Alias' Section~~
 
+##### CD #####
+alias 1='cd ../'
+alias 2='cd ../../'
+alias 3='cd ../../../'
+alias 4='cd ../../../../'
+alias 5='cd ../../../../../'
+
 ##### Prompt Stuff #####
-figlet -c Unlikely_Hacker
 autoload -U colors && colors
 autoload -U promptinit; promptinit
 prompt pure
