@@ -6,17 +6,21 @@
 alias mv="mv -i"           # -i prompts before overwrite
 alias cp="cp -i"           # -i prompts before overwrite
 alias mkdir='mkdir -p'
-alias sorty='sort|uniq -c|sort -rn'
+alias {cli_histogram,sorty}=‘sort|uniq -c|sort -rn'
 alias pingg='ping 8.8.8.8'
-alias ll='ls -alhtF'
+alias ll='ls -alhF@‘
 alias tmuxnew='tmux new -s $1'
 alias cls='clear; ls'
 # Gets local ip depending on which program is installed
 if [ -f /sbin/ip ]; then
-	alias iff='iffy "eth0"; iffy "wifi0";'
+	alias iff='iffy “en”0; iffy "wifi0";'
 else
-	alias iff='ifconfig ens33 | awk '\''$1 == "inet" {print $2}'\'''
+	alias iff='ifconfig ens33 | awk '\''$1 == “en0” {print $2}'\'''
 fi
+
+##### App Specific #####
+alias wms='wormhole send $1'
+alias wmr='wormhole recieve'
 
 ##### CD #####
 alias 1='cd ../'
@@ -30,7 +34,6 @@ alias ga='git add'
 alias gs='git status'
 alias gmsg='git commit -m $1'
 alias gp='git push'
-alias gcforensics='git clone https://github.com/jklm264/My-Forensics-Notes.git'
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	alias uu='sudo apt update && sudo apt upgrade -y && sudo apt autoclean -y && exit'
@@ -39,6 +42,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 else # Mac
 	alias uu=~/.updater.sh # Still have to make updater.sh
 fi
+
+##### Exports #####
+# Use vim as the editor
+export EDITOR=vim
 
 ##### Functions #####
 mcd () {
@@ -50,9 +57,11 @@ cwd="."
 marco () { cwd=$(pwd); }
 polo () { cd $cwd; }
 
+# Thanks gotbletu
 down4me() { curl -s "http://downforeveryoneorjustme.com/$1" | sed '/just you/!d;s/<[^>]*>//g' ;}   # check if a website is down
 
 iffy () {
         echo -n "$1: ";
         ip a | grep $1 -A 2| awk '$1 == "inet" {print $2}';
 }
+
