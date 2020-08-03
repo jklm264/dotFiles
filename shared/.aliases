@@ -6,14 +6,14 @@
 alias mv="mv -i"           # -i prompts before overwrite
 alias cp="cp -i"           # -i prompts before overwrite
 alias mkdir='mkdir -p'
-alias {cli_histogram,sorty}=‘sort|uniq -c|sort -rn'
+alias {cli_histogram,sorty}='sort|uniq -c|sort -rn'
 alias pingg='ping 8.8.8.8'
-alias ll='ls -alhF@‘
+alias ll='ls -alhF@'
 alias tmuxnew='tmux new -s $1'
 alias cls='clear; ls'
 # Gets local ip depending on which program is installed
 if [ -f /sbin/ip ]; then
-	alias iff='iffy “en”0; iffy "wifi0";'
+	alias iff='iffy “en0”; iffy "wifi0";'
 else
 	alias iff='ifconfig ens33 | awk '\''$1 == “en0” {print $2}'\'''
 fi
