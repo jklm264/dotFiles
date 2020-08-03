@@ -3,8 +3,6 @@ if [ -f .aliases ]; then
 	source ../shared/.aliases
 fi
 
-export EDITOR="vim";
-
 ##### History
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
