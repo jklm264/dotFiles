@@ -3,4 +3,7 @@ r2
 ranger
 tldr
 dtrx
-
+binwalk 
+node 
+foremost
+gnu-sed --default-names
