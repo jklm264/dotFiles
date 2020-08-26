@@ -6,6 +6,7 @@
 alias mv="mv -i"           # -i prompts before overwrite
 alias cp="cp -i"           # -i prompts before overwrite
 alias mkdir='mkdir -p'
+alias cls='clear;ls'
 alias {cli_histogram,sorty}='sort|uniq -c|sort -rn'
 alias pingg='ping 8.8.8.8'
 alias ll='ls -alhF@'
